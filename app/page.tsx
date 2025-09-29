@@ -1,103 +1,154 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Store, Smartphone, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Header */}
+        <header className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Zap className="w-12 h-12 text-blue-600" />
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
+              Aptos QR Merchant
+            </h1>
+          </div>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Accept crypto payments instantly with QR codes on Aptos blockchain
+          </p>
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            Testnet Active
+          </div>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Main Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Merchant Card */}
+          <Link href="/merchant">
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-transparent hover:border-blue-500 cursor-pointer transform hover:-translate-y-1">
+              <div className="absolute top-4 right-4 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Store className="w-6 h-6 text-blue-600" />
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-900 mb-3 mt-8">
+                Merchant Panel
+              </h2>
+              
+              <p className="text-gray-600 mb-6">
+                Generate payment QR codes and manage your receiving addresses
+              </p>
+
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Set receiving address
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Configure token & amount
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Generate QR code
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Share payment string
+                </li>
+              </ul>
+
+              <div className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
+                Open Merchant Panel
+                <span className="text-xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Customer Card */}
+          <Link href="/pay">
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-transparent hover:border-purple-500 cursor-pointer transform hover:-translate-y-1">
+              <div className="absolute top-4 right-4 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Smartphone className="w-6 h-6 text-purple-600" />
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-900 mb-3 mt-8">
+                Customer Payment
+              </h2>
+              
+              <p className="text-gray-600 mb-6">
+                Scan QR codes or paste payment strings to send crypto
+              </p>
+
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                  Connect wallet
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                  Scan QR code
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                  Or paste payment string
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                  Confirm & send
+                </li>
+              </ul>
+
+              <div className="inline-flex items-center gap-2 text-purple-600 font-semibold group-hover:gap-3 transition-all">
+                Make Payment
+                <span className="text-xl">→</span>
+              </div>
+            </div>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Features */}
+        <div className="mt-16 grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Zap className="w-6 h-6 text-blue-600" />
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Instant</h3>
+            <p className="text-sm text-gray-600">
+              Fast transactions on Aptos blockchain
+            </p>
+          </div>
+          
+          <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Secure</h3>
+            <p className="text-sm text-gray-600">
+              Non-custodial wallet integration
+            </p>
+          </div>
+          
+          <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v-6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Simple</h3>
+            <p className="text-sm text-gray-600">
+              Easy QR code or string payments
+            </p>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-16 text-center text-gray-500 text-sm">
+          <p>Built on Aptos Testnet • Supports APT & USDC</p>
+        </footer>
+      </div>
     </div>
   );
 }
