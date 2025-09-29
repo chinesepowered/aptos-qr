@@ -1,10 +1,27 @@
-# AptPay - Crypto Payment System
+# ⚡ AptPay
 
-A professional QR-based payment system built on Aptos blockchain for the hackathon. Merchants can generate payment QR codes, and customers can scan or paste payment strings to send crypto instantly.
+**The future of merchant payments on Aptos**
+
+AptPay is a lightning-fast, QR-based crypto payment system that makes accepting digital currencies as easy as scanning a code. Built on the Aptos blockchain, AptPay delivers instant, secure, and frictionless payment experiences for both merchants and customers.
 
 ![Aptos Testnet](https://img.shields.io/badge/Aptos-Testnet-green)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+
+## 🎯 Why AptPay?
+
+**For Merchants:**
+- ⚡ **Instant Settlement** - Payments confirmed in seconds, not days
+- 🔒 **Non-Custodial** - You control your funds, no intermediaries
+- 📱 **Zero Setup** - No merchant accounts, just your wallet address
+- 💰 **Low Fees** - Blockchain-native transactions with minimal costs
+- 🌐 **Global Reach** - Accept payments from anyone, anywhere
+
+**For Customers:**
+- 📲 **Simple Flow** - Scan QR or paste payment string
+- 🔐 **Secure** - Client-side signing, your keys never leave your device
+- ✅ **Transparent** - Every transaction verifiable on-chain
+- 🚀 **Fast** - Aptos blockchain speed and efficiency
 
 ## ✨ Features
 
@@ -33,10 +50,10 @@ A professional QR-based payment system built on Aptos blockchain for the hackath
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ installed
-- pnpm installed (`npm install -g pnpm`)
-- [Petra Wallet](https://petra.app/) browser extension
-- Testnet APT tokens (get from [Aptos Faucet](https://aptoslabs.com/testnet-faucet))
+- **Node.js 18+** installed
+- **pnpm** package manager (`npm install -g pnpm`)
+- **[Petra Wallet](https://petra.app/)** browser extension
+- **Testnet APT** tokens (get from [Aptos Faucet](https://aptoslabs.com/testnet-faucet))
 
 ### Installation
 
@@ -201,13 +218,21 @@ export const NETWORK = "testnet";
 export const NODE_URL = "https://api.testnet.aptoslabs.com/v1";
 ```
 
-## 📝 Notes
+## 💡 Key Features
 
-- This is a hackathon project for demonstration purposes
-- Uses Aptos Testnet - no real money involved
-- Wallet connection required for customer payments
-- No wallet needed for merchants to generate QR codes
-- QR codes and payment strings are interchangeable
+- **Dual Interface** - Separate optimized experiences for merchants and customers
+- **Flexible Payment Methods** - QR code scanning or manual string pasting
+- **Multi-Token Support** - APT and USDC with extensible architecture
+- **No Backend Required** - Fully client-side, deploy anywhere
+- **Mobile-Responsive** - Works seamlessly on all devices
+
+## 🌟 Use Cases
+
+- **Retail Stores** - Accept crypto at point of sale
+- **Online Merchants** - Generate payment links for e-commerce
+- **Service Providers** - Request payments with custom amounts
+- **P2P Transfers** - Send money between friends instantly
+- **Event Payments** - Quick ticket sales and vendor payments
 
 ## 🔗 Resources
 
@@ -217,10 +242,23 @@ export const NODE_URL = "https://api.testnet.aptoslabs.com/v1";
 - [Aptos TypeScript SDK](https://aptos.dev/sdks/ts-sdk/)
 - [Aptos Faucet](https://aptoslabs.com/testnet-faucet)
 
-## 📄 License
+## 🛣️ Roadmap
 
-MIT License - Built for Aptos Hackathon 2025
+- [ ] Multi-wallet support (Pontem, Martian, etc.)
+- [ ] Transaction history and analytics
+- [ ] Invoice generation and management
+- [ ] Custom token support
+- [ ] Mainnet deployment
+- [ ] Mobile native apps
+- [ ] Merchant dashboard with reporting
+- [ ] Recurring payment support
 
----
+<div align="center">
 
-**Happy Hacking! 🚀**
+**Built with ❤️ on Aptos**
+
+[Website](#) • [Documentation](#) • [Discord](#) • [Twitter](#)
+
+⚡ **AptPay - Payment at the Speed of Thought** ⚡
+
+</div>
