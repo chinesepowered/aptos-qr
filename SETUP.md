@@ -1,4 +1,4 @@
-# Quick Setup Guide
+# AptPay - Quick Setup Guide
 
 ## Build Fix Applied ✅
 

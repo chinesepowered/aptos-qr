@@ -1,4 +1,4 @@
-# Aptos QR Merchant - Crypto Payment System
+# AptPay - Crypto Payment System
 
 A professional QR-based payment system built on Aptos blockchain for the hackathon. Merchants can generate payment QR codes, and customers can scan or paste payment strings to send crypto instantly.
 

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aptos QR Merchant - Crypto Payment System",
+  title: "AptPay - Crypto Payment System",
   description: "Accept crypto payments with QR codes on Aptos blockchain",
 };
 

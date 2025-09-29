@@ -10,7 +10,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Zap className="w-12 h-12 text-blue-600" />
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
-              Aptos QR Merchant
+              AptPay
             </h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
