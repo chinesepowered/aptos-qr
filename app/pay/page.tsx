@@ -69,32 +69,33 @@ export default function PaymentPage() {
         token.decimals
       );
 
-      let payload;
+      let response;
 
       if (token.isNative) {
         // APT transfer
-        payload = {
-          function: "0x1::aptos_account::transfer",
-          typeArguments: [],
-          functionArguments: [paymentRequest.recipient, amountInSmallestUnit.toString()],
-        };
+        response = await signAndSubmitTransaction({
+          sender: account.address,
+          data: {
+            function: "0x1::aptos_account::transfer" as `${string}::${string}::${string}`,
+            typeArguments: [],
+            functionArguments: [paymentRequest.recipient, amountInSmallestUnit.toString()],
+          },
+        });
       } else {
         // Fungible Asset (USDC) transfer
-        payload = {
-          function: "0x1::primary_fungible_store::transfer",
-          typeArguments: [token.address],
-          functionArguments: [
-            token.address,
-            paymentRequest.recipient,
-            amountInSmallestUnit.toString(),
-          ],
-        };
+        response = await signAndSubmitTransaction({
+          sender: account.address,
+          data: {
+            function: "0x1::primary_fungible_store::transfer" as `${string}::${string}::${string}`,
+            typeArguments: [],
+            functionArguments: [
+              token.address,
+              paymentRequest.recipient,
+              amountInSmallestUnit.toString(),
+            ],
+          },
+        });
       }
-
-      const response = await signAndSubmitTransaction({
-        sender: account.address,
-        data: payload,
-      });
 
       // Wait for transaction
       const txResult = await aptos.waitForTransaction({
